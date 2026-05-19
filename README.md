@@ -14,11 +14,11 @@ git clone https://github.com/your-username/your-repo-name.git
 ```
 ### 2. Create the Database
 
-    Open your database management tool (e.g., phpMyAdmin).
+Open your database management tool (e.g., phpMyAdmin).
 
-    Import the schema from the provided file:
+Import the schema from the provided file:
 
-    `DBschema.txt`
+`DBschema.txt`
 
 This will create all necessary tables for the system.
 
@@ -40,7 +40,6 @@ $dbname = "hotel_db";   // Your database name
 ### 4. Run the Application
 
 Once the database is set up and connection configured, launch the system by opening:
-text
 
 `hotel.php`
 
@@ -48,17 +47,10 @@ in your browser **(e.g., http://localhost/hotel.php).**
 
 ## 📂 Project Structure
     ├── hotel.php → Main entry point
-    
     ├── layout/ → Contains connection and layout files
-    
     ├── bookinglist.php, addbooking.php → Booking management
-    
     ├── manageroom.php, editroom.php → Room management
-    
     ├── payment.php → Payment handling
-    
     ├── maintenance.php → Maintenance records
-    
     ├── cusdetail.php → Customer details
-    
     └── loginpage.php → Admin login
