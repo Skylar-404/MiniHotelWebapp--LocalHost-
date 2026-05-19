@@ -9,8 +9,7 @@ This project is built using PHP and MySQL, designed to manage hotel bookings, ro
 Use the following command in your terminal or command prompt:
 
 ```bash
-
-git clone https://github.com/your-username/your-repo-name.git
+https://github.com/Skylar-404/MiniHotelWebapp--LocalHost-.git
 ```
 ### 2. Create the Database
 
