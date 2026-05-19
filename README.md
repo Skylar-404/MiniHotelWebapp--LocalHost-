@@ -1,23 +1,23 @@
-🏨 Hotel Management System
-
+# 🏨 Hotel Management System
 Welcome to the Hotel Management System repository!
 This project is built using PHP and MySQL, designed to manage hotel bookings, rooms, payments, customers, and maintenance records.
-🚀 Getting Started
+---
+## 🚀 Getting Started
 1. Clone the Repository
 
 Use the following command in your terminal or command prompt:
 
-bash
+```bash
 
 git clone https://github.com/your-username/your-repo-name.git
-
+```
 2. Create the Database
 
     Open your database management tool (e.g., phpMyAdmin).
 
     Import the schema from the provided file:
 
-DBschema.txt
+    `DBschema.txt`
 
 This will create all necessary tables for the system.
 3. Configure Database Connection
