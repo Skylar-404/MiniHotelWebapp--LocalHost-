@@ -1,0 +1,68 @@
+-- Admins table
+CREATE TABLE admins (
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('Admin', 'Manager', 'Staff') DEFAULT 'Admin',
+    salary DECIMAL(10,0) NOT NULL
+);
+
+-- Customers table
+CREATE TABLE customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255),
+    phone VARCHAR(20),
+    address VARCHAR(255)
+);
+
+-- Rooms table
+CREATE TABLE rooms (
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_number VARCHAR(10) NOT NULL,
+    room_type VARCHAR(50) NOT NULL,
+    capacity INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    status ENUM('Available', 'Booked', 'Maintenance') DEFAULT 'Available',
+    room_img VARCHAR(500) NOT NULL,
+    note VARCHAR(50) NOT NULL
+);
+
+-- Bookings table
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    room_id INT NOT NULL,
+    check_in DATE NOT NULL,
+    check_out DATE NOT NULL,
+    status ENUM('Booked', 'Checked In', 'Checked Out', 'Cancelled') DEFAULT 'Booked',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES rooms(room_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+-- Payments table
+CREATE TABLE payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    method ENUM('Cash', 'Credit Card', 'KHQR') NOT NULL,
+    FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+-- Maintenance table
+CREATE TABLE maintenance (
+    maintenance_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_id INT NOT NULL,
+    cause VARCHAR(255) NOT NULL,
+    cost DECIMAL(10,2) NOT NULL,
+    maintenance_date DATE NOT NULL,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (room_id) REFERENCES rooms(room_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
