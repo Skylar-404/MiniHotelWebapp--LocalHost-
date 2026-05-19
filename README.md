@@ -1,4 +1,3 @@
-Here’s a simple README.md draft for your GitHub repository. It’s concise, welcoming, and gives clear instructions on setup and usage:
 🏨 Hotel Management System
 
 Welcome to the Hotel Management System repository!
