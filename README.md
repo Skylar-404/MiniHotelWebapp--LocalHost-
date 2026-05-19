@@ -6,6 +6,7 @@ This project is built using PHP and MySQL, designed to manage hotel bookings, ro
 1. Clone the Repository
 
 Use the following command in your terminal or command prompt:
+
 bash
 
 git clone https://github.com/your-username/your-repo-name.git
@@ -15,8 +16,6 @@ git clone https://github.com/your-username/your-repo-name.git
     Open your database management tool (e.g., phpMyAdmin).
 
     Import the schema from the provided file:
-
-text
 
 DBschema.txt
 
